@@ -49,7 +49,7 @@ resource "google_project_service" "firebase_api" {
 resource "google_firebase_web_app" "web_app" {
   provider     = google-beta 
   # This creates a web app to host the React code and get client config
-  display_name = "REPLACE ME"
+  display_name = "cdeevfrr Games"
   depends_on   = [
     google_project_service.firebase_api, 
     google_firebase_project.default
