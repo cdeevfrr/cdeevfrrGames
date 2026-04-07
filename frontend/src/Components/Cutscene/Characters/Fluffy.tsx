@@ -1,21 +1,20 @@
-import { CharacterProps } from "./types";
+import { CharacterProps, Mood } from "./types";
+
+const files: Record<Mood, string> = {
+    angry: "/assets/characters/Fluffy/Gemini_Fluffy_determined.png",
+    happy: "/assets/characters/Fluffy/Gemini_Fluffy_happy.png",
+    neutral: "/assets/characters/Fluffy/Gemini_Fluffy_neutral.png",
+    sad: "/assets/characters/Fluffy/Gemini_Fluffy_sad.png",
+}
 
 export function Fluffy({
-    mood,
     sizePx = 100,
+    mood
 }: CharacterProps) {
-    const eyeY = mood === 'happy' ? 45 : 55;
-
-    return (
-        <svg
-            viewBox={`0 0 ${sizePx} ${2 * sizePx}`}
-            style={{ height: '100%', width: 'auto', filter: 'drop-shadow(2px 4px 6px black)' }}
-        >
-            {/* Body */}
-            <path d="M20 180 Q50 20 80 180" fill="gray" stroke="black" vectorEffect="non-scaling-stroke" />
-            {/* Eyes that react to props */}
-            <circle cx="40" cy={eyeY} r="5" fill="white" />
-            <circle cx="60" cy={eyeY} r="5" fill="white" />
-        </svg>
-    );
+    
+    return <img 
+    src={files[mood]}
+    alt="Fluffy Neutral"
+    style={{width: '100%'}}
+    ></img>
 }

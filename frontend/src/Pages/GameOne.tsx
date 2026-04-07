@@ -1,6 +1,7 @@
 import { User } from "firebase/auth";
 import { Stage } from "../Components/Cutscene/Stage";
 import { Guard } from "../Components/Cutscene/Characters/Guard";
+import { Fluffy } from "../Components/Cutscene/Characters/Fluffy";
 
 export function GameOne({user}:{user: User}) {
     return <div
@@ -15,7 +16,7 @@ export function GameOne({user}:{user: User}) {
         <Stage 
         text="Welcome to the game" 
         characters={[
-            {image: Guard, mood: 'happy', name: 'Guard', sizePx: 100, xOffsetPercent: 80,}
+            {image: Fluffy, mood: 'neutral', name: 'Fluffy', xOffsetPercent: 60,}
         ]}
         speaker={0}
         />  

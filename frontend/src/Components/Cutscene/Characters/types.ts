@@ -7,7 +7,7 @@ export interface CharacterProps {
   sizePx?: number,
 }
 
-export type Mood = 'neutral' | 'happy' | 'angry';
+export type Mood = 'neutral' | 'happy' | 'angry' | 'sad';
 
 
 

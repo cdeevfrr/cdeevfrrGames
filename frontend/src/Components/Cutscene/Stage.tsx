@@ -10,7 +10,6 @@ interface CharacterEntry {
      * 50, not .5
      */
     xOffsetPercent: number;
-    sizePx: number;
     facing?: 'left' | 'right';
 }
 
@@ -50,17 +49,17 @@ export function Stage({
                             key={`${char.name}-${index}`}
                             style={{
                                 position: 'absolute',
-                                bottom: '20%', // leave a gap for the dialogue box
+                                bottom: '15%', 
                                 left: `${char.xOffsetPercent}%`,
-                                width: `${char.sizePx}px`,
+                                width: `30%`,
                                 // We combine the flip with a slight tilt for the speaker later
                                 transform: `translateX(-50%) scaleX(${flipScale}) ${isSpeaking ? 'rotate(-2deg)' : 'rotate(0deg)'}`,
                                 transition: 'all 0.3s ease', // smooths out movements
                                 zIndex: isSpeaking ? 10 : 1, // Speaker stays on top
-                                opacity: isSpeaking ? 1 : 0.8 // Dim non-speakers slightly
+                                opacity: isSpeaking ? 1 : 0.8, // Dim non-speakers slightly
                             }}
                         >
-                            <CharacterComponent mood={char.mood} sizePx={char.sizePx} />
+                            <CharacterComponent mood={char.mood} sizePx={100} />
                         </div>
                     );
                 })}
