@@ -14,7 +14,7 @@ interface CharacterEntry {
 }
 
 
-export function Stage({
+export function DialogueFrame({
     characters,
     speaker,
     text,
@@ -67,7 +67,7 @@ export function Stage({
 
             {/* Dialogue Overlay */}
             <DialogueBox
-                speaker={characters[speaker]!.name}
+                speaker={characters[speaker]?.name}
                 text={text}
             />
 

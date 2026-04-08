@@ -1,9 +1,15 @@
 import { User } from "firebase/auth";
-import { Stage } from "../Components/Cutscene/Stage";
-import { Guard } from "../Components/Cutscene/Characters/Guard";
-import { Fluffy } from "../Components/Cutscene/Characters/Fluffy";
+import { useEffect, useState } from "react";
+import { CutsceneManager } from "../Components/Cutscene/CutsceneManager";
+import { Cutscene, CutsceneFluffyIntro } from "../Components/Cutscene/Cutscenes";
 
 export function GameOne({user}:{user: User}) {
+    const [activeCutscene, setActiveCutscene] = useState<Cutscene | null>(null);
+
+    useEffect(() => {
+        setActiveCutscene(CutsceneFluffyIntro)
+    }, [])
+    
     return <div
         style= {{
             backgroundImage: 'url(/assets/backgrounds/Gemini_Generated_Cave.png)',
@@ -13,12 +19,11 @@ export function GameOne({user}:{user: User}) {
             width: '100vw'
         }}
     >
-        <Stage 
-        text="Welcome to the game" 
-        characters={[
-            {image: Fluffy, mood: 'neutral', name: 'Fluffy', xOffsetPercent: 60,}
-        ]}
-        speaker={0}
-        />  
-        </div>
+        {activeCutscene && (
+            <CutsceneManager 
+                cutscene={activeCutscene} 
+                onComplete={() => setActiveCutscene(null)} 
+            />
+        )}
+    </div>
 }
