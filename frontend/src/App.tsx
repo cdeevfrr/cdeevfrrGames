@@ -3,7 +3,7 @@ import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth } from './APIs/Firebase';
 import { signOutUser } from './APIs/auth-service';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { GameOne } from './Pages/GameOne';
+import { GameOne } from './GameOne/GameOne';
 import { LoginView } from './Pages/LoginView';
 import { LandingPage } from './Pages/LandingPage';
 
