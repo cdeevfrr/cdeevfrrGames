@@ -1,13 +1,13 @@
 import { User } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { CutsceneManager } from "../Components/Cutscene/CutsceneManager";
-import { Cutscene, CutsceneFluffyIntro } from "../Components/Cutscene/Cutscenes";
+import { Cutscene, CutsceneFluffyIntro, CutsceneStartGame } from "../Components/Cutscene/Cutscenes";
 
 export function GameOne({user}:{user: User}) {
     const [activeCutscene, setActiveCutscene] = useState<Cutscene | null>(null);
 
     useEffect(() => {
-        setActiveCutscene(CutsceneFluffyIntro)
+        setActiveCutscene(CutsceneStartGame)
     }, [])
     
     return <div
