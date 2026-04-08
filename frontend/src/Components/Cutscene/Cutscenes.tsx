@@ -20,14 +20,14 @@ export const CutsceneFluffyIntro: Cutscene = [
         speaker: 0
     },
     {
-        text: "You can use a purified gem to defeat a hazy gem! And once purified, the world can use the gem to push back the Blorg's Miasma. Here's a small purified gem to get you started.",
+        text: "You can use a purified gem to defeat a hazy gem, purifying it! And then, the world can use the new gem to push back the Blorg's Miasma.",
         characters: [
             { image: Fluffy, mood: 'neutral', name: 'Fluffy', xOffsetPercent: 60, }
         ],
         speaker: 0
     },
     {
-        text: "Anyway, experience is best teacher! Go ahead into the dungeon and try to remove some haze!",
+        text: "Anyway, experience is best teacher! Here's a small purified gem to get you started. Go ahead into the dungeon and try to remove some haze!",
         characters: [
             { image: Fluffy, mood: 'neutral', name: 'Fluffy', xOffsetPercent: 60, }
         ],
