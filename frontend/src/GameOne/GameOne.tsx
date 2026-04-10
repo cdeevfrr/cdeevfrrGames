@@ -1,14 +1,25 @@
 import { User } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { CutsceneManager } from "../Components/Cutscene/CutsceneManager";
-import { Cutscene, CutsceneFluffyIntro, CutsceneStartGame } from "../Components/Cutscene/Cutscenes";
+import { Cutscene, CutsceneFluffyIntro, cutscenes, CutsceneStartGame } from "../Components/Cutscene/Cutscenes";
+import { createBaseGameState, GameState } from "./GameStateTypes";
+import { BaseView } from "../Components/Cutscene/BaseView";
+import { DungeonView } from "../Components/Cutscene/DungeonView";
+import { BattleView } from "../Components/Cutscene/BattleView";
 
 export function GameOne({user}:{user: User}) {
-    const [activeCutscene, setActiveCutscene] = useState<Cutscene | null>(null);
+    const [activeCutsceneIndex, setActiveCutsceneIndex] = useState<keyof typeof cutscenes | null>(null);
+    const [gameState, setGameState] = useState<GameState>(createBaseGameState());
 
     useEffect(() => {
-        setActiveCutscene(CutsceneStartGame)
+        // Load game state from database.
+        // If not found, create the starting game state.
     }, [])
+
+    // Play the intro if needed.
+    if (!activeCutsceneIndex && gameState.playerInfo.currentView === "base" && !gameState.playerInfo.viewedCutscenes.has('intro')){
+        setActiveCutsceneIndex('intro');
+    }
     
     return <div
         style= {{
@@ -19,10 +30,34 @@ export function GameOne({user}:{user: User}) {
             width: '100vw'
         }}
     >
-        {activeCutscene && (
+        {gameState.playerInfo.currentView === 'base' && <BaseView 
+            playerInfo={gameState.playerInfo}
+        />}
+        {gameState.playerInfo.currentView === 'dungeon' && <DungeonView 
+            dungeonInfo={gameState.dungeonInfo!} 
+            playerInfo={gameState.playerInfo}
+        />}
+        {gameState.playerInfo.currentView === 'battle' && <BattleView 
+            dungeonInfo={gameState.dungeonInfo!} 
+            playerInfo={gameState.playerInfo}
+            battleInfo={gameState.battleInfo!} 
+        />}
+
+        {activeCutsceneIndex && (
             <CutsceneManager 
-                cutscene={activeCutscene} 
-                onComplete={() => setActiveCutscene(null)} 
+                cutscene={cutscenes[activeCutsceneIndex]} 
+                onComplete={() => {
+                    setGameState((gameState) => {
+                        return {
+                            ...gameState,
+                            playerInfo: {
+                                ...gameState.playerInfo,
+                                viewedCutscenes: new Set([...gameState.playerInfo.viewedCutscenes, activeCutsceneIndex])
+                            }
+                        }
+                    })
+                    setActiveCutsceneIndex(null)
+                }} 
             />
         )}
     </div>

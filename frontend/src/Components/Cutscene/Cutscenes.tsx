@@ -2,6 +2,7 @@ import { Fluffy } from "./Characters/Fluffy";
 import { Narrator } from "./Characters/Narrator";
 import { DialogueFrame } from "./DialogueFrame";
 
+
 export type Cutscene = Array<Parameters<typeof DialogueFrame>[0]>
 
 export const CutsceneFluffyIntro: Cutscene = [
@@ -68,5 +69,9 @@ export const CutsceneStartGame: Cutscene = [
     ...CutsceneFluffyIntro
 ]
 
+
+export const cutscenes = {
+    'intro': CutsceneStartGame,
+}
 
 
