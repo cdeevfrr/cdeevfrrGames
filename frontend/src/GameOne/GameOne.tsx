@@ -31,6 +31,10 @@ export function GameOne({user}:{user: User}) {
         }}
     >
         {gameState.playerInfo.currentView === 'base' && <BaseView 
+            onCombineGems={() => {}}
+            onEnterDungeon={() => {}}
+            onOpenInventory={() => {}}
+            onOpenPartyMenu={() => {}}
             playerInfo={gameState.playerInfo}
         />}
         {gameState.playerInfo.currentView === 'dungeon' && <DungeonView 
