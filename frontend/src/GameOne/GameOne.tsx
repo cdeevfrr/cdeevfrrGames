@@ -8,6 +8,9 @@ import { DungeonView } from "../Components/Cutscene/DungeonView";
 import { BattleView } from "../Components/Cutscene/BattleView";
 
 export function GameOne({user}:{user: User}) {
+    return <div>
+        <h1>Temporarily turned off.</h1>
+    </div>
     const [activeCutsceneIndex, setActiveCutsceneIndex] = useState<keyof typeof cutscenes | null>(null);
     const [gameState, setGameState] = useState<GameState>(createBaseGameState());
 
