@@ -1,9 +1,6 @@
 import { Fluffy } from "./Characters/Fluffy";
 import { Narrator } from "./Characters/Narrator";
-import { DialogueFrame } from "./DialogueFrame";
-
-
-export type Cutscene = Array<Parameters<typeof DialogueFrame>[0]>
+import { Cutscene } from "../../../Components/Cutscenes/CutsceneManager";
 
 export const CutsceneFluffyIntro: Cutscene = [
     {

@@ -1,5 +1,5 @@
 // Stage.js
-import { CharacterProps, Mood } from "./Characters/types";
+import { CharacterProps, Mood } from "./types";
 import { DialogueBox } from "./DialogueBox";
 
 interface CharacterEntry {

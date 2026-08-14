@@ -1,4 +1,4 @@
-import { CharacterProps, Mood } from "./types";
+import { CharacterProps, Mood } from "../../../../Components/Cutscenes/types";
 
 const files: Record<Mood, string> = {
     angry: "/assets/characters/Fluffy/Gemini_Fluffy_determined.png",

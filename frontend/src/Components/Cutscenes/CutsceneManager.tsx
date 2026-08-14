@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { DialogueFrame } from './DialogueFrame'; // Your renamed Stage component
-import { Cutscene } from './Cutscenes';
+
+export type Cutscene = Array<Parameters<typeof DialogueFrame>[0]>
 
 export function CutsceneManager({ 
     cutscene, 

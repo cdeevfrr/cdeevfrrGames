@@ -1,4 +1,4 @@
-import { CharacterProps } from "./types";
+import { CharacterProps } from "../../../../Components/Cutscenes/types";
 
 export function Guard({
     mood,
