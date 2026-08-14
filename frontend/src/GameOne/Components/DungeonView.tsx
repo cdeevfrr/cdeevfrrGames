@@ -1,4 +1,4 @@
-import { DungeonInfo, PlayerInfo } from "../../GameStateTypes";
+import { DungeonInfo, PlayerInfo } from "../GameStateTypes";
 
 export function DungeonView({
     playerInfo,

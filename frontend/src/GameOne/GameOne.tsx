@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { CutsceneManager } from "../Components/Cutscenes/CutsceneManager";
 import { cutscenes } from "./Components/Cutscene/Cutscenes";
 import { createBaseGameState, GameState } from "./GameStateTypes";
-import { BaseView } from "./Components/Cutscene/BaseView";
-import { DungeonView } from "./Components/Cutscene/DungeonView";
-import { BattleView } from "./Components/Cutscene/BattleView";
+import { BaseView } from "./Components/BaseView";
+import { DungeonView } from "./Components/DungeonView";
+import { BattleView } from "./Components/BattleView";
 
 export function GameOne({user}:{user: User}) {
     const [activeCutsceneIndex, setActiveCutsceneIndex] = useState<keyof typeof cutscenes | null>(null);

@@ -1,6 +1,6 @@
 import React from "react";
-import { PlayerInfo } from "../../GameStateTypes";
-import { ThemeStyles } from "../../../Theme";
+import { PlayerInfo } from "../GameStateTypes";
+import { ThemeStyles } from "../../Theme";
 
 interface BaseViewProps {
   playerInfo: PlayerInfo;
