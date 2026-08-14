@@ -1,11 +1,11 @@
 import { User } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { CutsceneManager } from "../Components/Cutscene/CutsceneManager";
-import { Cutscene, CutsceneFluffyIntro, cutscenes, CutsceneStartGame } from "../Components/Cutscene/Cutscenes";
+import { CutsceneManager } from "./Components/Cutscene/CutsceneManager";
+import { Cutscene, CutsceneFluffyIntro, cutscenes, CutsceneStartGame } from "./Components/Cutscene/Cutscenes";
 import { createBaseGameState, GameState } from "./GameStateTypes";
-import { BaseView } from "../Components/Cutscene/BaseView";
-import { DungeonView } from "../Components/Cutscene/DungeonView";
-import { BattleView } from "../Components/Cutscene/BattleView";
+import { BaseView } from "./Components/Cutscene/BaseView";
+import { DungeonView } from "./Components/Cutscene/DungeonView";
+import { BattleView } from "./Components/Cutscene/BattleView";
 
 export function GameOne({user}:{user: User}) {
     return <div>

@@ -1,4 +1,4 @@
-import { BattleInfo, DungeonInfo, PlayerInfo } from "../../GameOne/GameStateTypes";
+import { BattleInfo, DungeonInfo, PlayerInfo } from "../../GameStateTypes";
 
 export function BattleView({
     playerInfo,

@@ -2,7 +2,7 @@
  * Everything in this file is a type that can be saved directly to the database as JSON.
  */
 
-import { cutscenes } from "../Components/Cutscene/Cutscenes";
+import { cutscenes } from "./Components/Cutscene/Cutscenes";
 
 
 export interface Settings {
