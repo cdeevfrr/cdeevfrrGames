@@ -6,6 +6,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { GameOne } from './GameOne/GameOne';
 import { LoginView } from './Pages/LoginView';
 import { LandingPage } from './Pages/LandingPage';
+import { DivideApp } from './GameTwo_Divide/DivideApp';
 
 
 export function App() {
@@ -31,10 +32,14 @@ export function App() {
         element={!user ? <LoginView /> : <LandingPage user={user} signOutUser={signOutUser}/>} 
       />
 
-      {/* Protected Route: Only accessible if user exists */}
+      {/* Protected Routes to games are only accessible if user exists */}
       <Route 
         path="/game-one" 
         element={user ? <GameOne user={user}/> : <Navigate to="/" />} 
+      />
+      <Route 
+        path="/divide" 
+        element={user ? <DivideApp user={user}/> : <Navigate to="/" />} 
       />
 
       {/* 404 Catch-all */}

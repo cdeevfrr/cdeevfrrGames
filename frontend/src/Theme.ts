@@ -1,5 +1,5 @@
 export const ThemeStyles: Record<string, React.CSSProperties> = {
-    pageWrapper: {
+    pageWrapper: { // A full page background from within one game
         margin: 0,
         minHeight: '100vh',
         display: 'flex',

@@ -1,3 +1,34 @@
+### Frontend organization
+
+The frontend handles login and a landing page that lets users pick which game they want to play.
+
+In the code, each game should be entirely self-contained in its own folder. 
+
+Each game gets to make a single top-level react component which will be a page in the react router, make sure to update App.tsx when making a new game.
+
+
+
+
+# Our (optional) Game design framework:
+
+We have adopted this framework to maximize emergent strategic depth while minimizing software implementation and maintenance complexity.
+
+We organize game concepts into primitives, each with a category, like this:
+
+| **Spatial** | **Temporal** | **Economic** |
+| :--- | :--- | :--- |
+| Distance, position, AEO, elevation, line-of-sight, directional facing ... | cooldown, duration, rate of fire, cast delay, ...| HP, gold, mana, shield/armor/defense, durability, color/damage type | 
+
+To make a new effect type, combine primitives from two categories. Eg, you can combine duration and HP to have the concept of poison damage. Or, you could combine gold and position to make the monster reward go up further from the base.
+
+To design a game, pick a very _narrow_ set of primitives and intentionally _exclude_ all the others as out-of-scope. Add mechanics and complexity by combining primitives, not adding new primitives. And especially things tradeoffs - as the HP impact increases, the duration decreases, or similar.
+
+This helps create a lot of strategic interactions for players, using a very concise codebase.
+
+
+## Development
+CreateReactApp default readme:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
